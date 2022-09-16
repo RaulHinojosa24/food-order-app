@@ -1,0 +1,25 @@
+.header__button {
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 50px;
+  display: flex;
+  color: inherit;
+  padding: 0.5rem 1.5rem;
+  font-size: 1.2rem;
+  border: none;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.icon {
+  height: 1.4rem;
+  width: 1.4rem;
+}
+
+.badge {
+  font-size: larger;
+  background-color: rgb(227, 91, 33);
+  font-weight: bold;
+  padding: 0.2rem 0.5rem;
+  border-radius: 50px;
+}

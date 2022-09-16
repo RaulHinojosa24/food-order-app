@@ -1,14 +1,14 @@
 .header {
   position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5rem;
+  padding: 0 10%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #d64f37;
-  width: 100%;
-  padding: 0px 5rem;
-}
-
-.header__title {
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
   color: white;
-  font-weight: bold;
 }
