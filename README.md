@@ -1,3 +1,9 @@
+# Project purposes
+
+I'm following a React course, and now it's time to practice what I've learnt.
+I'll try to have a good components tree, use all hooks I've seen (useState, useEffect, useRef, useContext, useReducer) and use portals too.
+We'll see how it goes! :)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
