@@ -1,0 +1,14 @@
+.header {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #d64f37;
+  width: 100%;
+  padding: 0px 5rem;
+}
+
+.header__title {
+  color: white;
+  font-weight: bold;
+}
