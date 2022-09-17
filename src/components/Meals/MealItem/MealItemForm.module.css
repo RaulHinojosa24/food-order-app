@@ -20,6 +20,12 @@
   font-size: inherit;
 }
 
+.error {
+  margin-right: 1rem;
+  display: inline;
+  color: rgb(158, 15, 15);
+}
+
 button[type="submit"] {
   background-color: rgb(227, 91, 33);
   font-weight: bold;
