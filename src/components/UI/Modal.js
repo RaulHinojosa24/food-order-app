@@ -29,16 +29,14 @@ const Modal = (props) => {
   return (
     <Fragment>
       {ReactDOM.createPortal(
-        props.isCartOpen && <Backdrop onClose={props.onClose}></Backdrop>,
+        <Backdrop onClose={props.onClose}></Backdrop>,
         rootElement
       )}
 
       {ReactDOM.createPortal(
-        props.isCartOpen && (
-          <ModalOverlay className={props.className ? props.className : ""}>
-            {props.children}
-          </ModalOverlay>
-        ),
+        <ModalOverlay className={props.className ? props.className : ""}>
+          {props.children}
+        </ModalOverlay>,
         rootElement
       )}
     </Fragment>

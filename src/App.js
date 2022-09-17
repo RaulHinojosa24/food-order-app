@@ -16,7 +16,7 @@ function App() {
 
   return (
     <StoreProvider>
-      <Cart isCartOpen={isCartOpen} onClose={closeCartHandler}></Cart>
+      {isCartOpen && <Cart onClose={closeCartHandler}></Cart>}
       <Header onOpenCart={openCartHandler}></Header>
       <main>
         <Meals></Meals>
