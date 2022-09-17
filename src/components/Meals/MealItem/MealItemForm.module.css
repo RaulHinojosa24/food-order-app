@@ -1,0 +1,37 @@
+.meal-form form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.meal-form form label {
+  margin-right: 1rem;
+  font-weight: bold;
+}
+
+.meal-form form input {
+  width: 3rem;
+  padding: 0.2rem 0.4rem;
+  border: 1px solid rgba(128, 128, 128, 0.5);
+  border-radius: 5px;
+  font-size: inherit;
+}
+
+button[type="submit"] {
+  background-color: rgb(227, 91, 33);
+  font-weight: bold;
+  font-size: inherit;
+  color: white;
+  padding: 0.5rem 2rem;
+  border-radius: 50px;
+  border: none;
+}
+
+button:hover,
+button:active {
+  cursor: pointer;
+  background-color: rgb(184, 75, 28);
+}

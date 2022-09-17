@@ -12,8 +12,10 @@
   gap: 0.5rem;
 }
 
-.header__button:hover {
+.header__button:hover,
+.header__button:active {
   cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .icon {
@@ -26,4 +28,9 @@
   font-weight: bold;
   padding: 0.2rem 1rem;
   border-radius: 50px;
+}
+
+.header__button:hover .badge,
+.header__button:active .badge {
+  background-color: rgb(184, 75, 28);
 }

@@ -1,0 +1,33 @@
+.meal-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 1rem;
+  padding: 1rem 0;
+}
+
+.meal-item + .meal-item {
+  border-top: 1px solid rgba(128, 128, 128, 0.5);
+}
+
+.meal {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+}
+
+.meal .name {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.meal .description {
+  font-style: italic;
+}
+
+.meal .price {
+  color: rgb(224, 120, 35);
+  font-weight: bold;
+  font-size: 1.4rem;
+}
