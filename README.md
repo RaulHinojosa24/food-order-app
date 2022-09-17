@@ -4,6 +4,15 @@ I'm following a React course, and now it's time to practice what I've learnt.
 I'll try to have a good components tree, use all hooks I've seen (useState, useEffect, useRef, useContext, useReducer) and use portals too.
 We'll see how it goes! :)
 
+# Done! How was it?
+
+I had no big problem replicating the project. There's been a couple moments where I had to look teacher's solution beacuse I had some brain farts >.<.
+Using useState, useRef, useEffect, useContext hooks were pretty easy, no problem.
+useReducer and ReactDOM Portals were the harder ones, had to check code more than once but I'd say that I had... 80% right :)
+Building components logic was pretty good too, but, I saw the solution and I found better ideas on how to distribute the components.
+In conclusion, I made around 80%-90% of the project on my own, so I feel like I'm doing really good, nice learning speed and comprehension.
+Now it's time to fully check teacher's solution, let's see how he made it :D
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
