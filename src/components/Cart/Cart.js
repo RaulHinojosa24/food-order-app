@@ -14,20 +14,34 @@ const Cart = (props) => {
     console.log("Order sent!");
   };
 
+  const incrementHandler = (item) => {
+    context.addItem({
+      ...item,
+      amount: 1,
+    });
+  };
+
+  const decrementHandler = (id) => {
+    context.removeItem(id);
+  };
+
   const cartItems = (
     <ul>
       {context.items.map((item) => {
-        return <CartItem item={item} key={item.id} />;
+        return (
+          <CartItem
+            item={item}
+            key={item.id}
+            onIncrement={incrementHandler}
+            onDecrement={decrementHandler}
+          />
+        );
       })}
     </ul>
   );
 
   return (
-    <Modal
-      onClose={props.onClose}
-      isCartOpen={props.isCartOpen}
-      className={classes.cart}
-    >
+    <Modal onClose={props.onClose} className={classes.cart}>
       {context.items.length > 0 && cartItems}
       <div className={classes["cart-summary"]}>
         <h2>Total Amount</h2>
