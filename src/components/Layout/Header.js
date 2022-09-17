@@ -5,12 +5,12 @@ import headerImg from "../../assets/meals.jpg";
 
 import HeaderCartButton from "./HeaderCartButton";
 
-const Header = () => {
+const Header = (props) => {
   return (
     <Fragment>
       <header className={classes.header}>
         <h1>Food Order</h1>
-        <HeaderCartButton></HeaderCartButton>
+        <HeaderCartButton onOpenCart={props.onOpenCart}></HeaderCartButton>
       </header>
       <div className={classes["landing-image"]}>
         <img src={headerImg} alt="Table full of food." />

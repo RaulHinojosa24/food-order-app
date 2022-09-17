@@ -3,9 +3,14 @@ import StoreContext from "../../store/store-context";
 import CartIcon from "../Cart/CartIcon";
 import classes from "./HeaderCartButton.module.css";
 
-const HeaderCartButton = () => {
+const HeaderCartButton = (props) => {
   const { items } = useContext(StoreContext);
-  const [totalMeals, setTotalMeals] = useState(0);
+  const [totalMeals, setTotalMeals] = useState(items.length);
+  const [bounce, setBounce] = useState(false);
+
+  const openCartHandler = () => {
+    props.onOpenCart();
+  };
 
   useEffect(() => {
     setTotalMeals(
@@ -13,10 +18,23 @@ const HeaderCartButton = () => {
         return sum + item.amount;
       }, 0)
     );
+
+    setBounce(true);
+
+    const timeout = setTimeout(() => {
+      setBounce(false);
+    }, 300);
+
+    return () => {
+      clearTimeout(timeout);
+    };
   }, [items]);
 
   return (
-    <button className={classes["header__button"]}>
+    <button
+      className={`${classes["header__button"]} ${bounce ? classes.bounce : ""}`}
+      onClick={openCartHandler}
+    >
       <span className={classes.icon}>
         <CartIcon />
       </span>
