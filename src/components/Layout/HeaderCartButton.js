@@ -5,7 +5,9 @@ import classes from "./HeaderCartButton.module.css";
 
 const HeaderCartButton = (props) => {
   const { items } = useContext(StoreContext);
-  const [totalMeals, setTotalMeals] = useState(items.length);
+  const totalMeals = items.reduce((sum, item) => {
+    return sum + item.amount;
+  }, 0);
   const [bounce, setBounce] = useState(false);
 
   const openCartHandler = () => {
@@ -13,11 +15,9 @@ const HeaderCartButton = (props) => {
   };
 
   useEffect(() => {
-    setTotalMeals(
-      items.reduce((sum, item) => {
-        return sum + item.amount;
-      }, 0)
-    );
+    if (items.length === 0) {
+      return;
+    }
 
     setBounce(true);
 
