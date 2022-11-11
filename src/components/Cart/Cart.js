@@ -11,6 +11,7 @@ const Cart = (props) => {
   const [isCheckout, setIsCheckout] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [didSubmit, setDidSubmit] = useState(false);
+  const [httpError, setHttpError] = useState(null);
 
   const fixedTotalAmount = context.totalAmount.toFixed(2);
 
@@ -39,11 +40,13 @@ const Cart = (props) => {
       }
     )
       .then(() => {
+        setHttpError(null);
         setIsSubmitting(false);
         setDidSubmit(true);
         context.clearCart();
       })
-      .catch(() => {
+      .catch((error) => {
+        setHttpError(error.message);
         setIsSubmitting(false);
       });
   };
@@ -101,12 +104,23 @@ const Cart = (props) => {
       </div>
     </>
   );
+  const httpErrorModalContent = (
+    <>
+      <p>{httpError}</p>
+      <div className={classes.actions}>
+        <button className={classes.cancel} onClick={props.onClose}>
+          Close
+        </button>
+      </div>
+    </>
+  );
 
   return (
     <Modal onClose={props.onClose} className={classes.cart}>
-      {!isSubmitting && !didSubmit && cartModalContent}
+      {!httpError && !isSubmitting && !didSubmit && cartModalContent}
       {isSubmitting && isSubmittingModalContent}
       {didSubmit && didSubmitModalContent}
+      {httpError && httpErrorModalContent}
     </Modal>
   );
 };
