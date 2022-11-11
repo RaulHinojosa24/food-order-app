@@ -33,6 +33,7 @@ import MealItem from "./MealItem/MealItem";
 const AvailableMeals = () => {
   const [meals, setMeals] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [httpError, setHttpError] = useState();
 
   useEffect(() => {
     fetch(
@@ -47,8 +48,16 @@ const AvailableMeals = () => {
         );
 
         setIsLoading(false);
+      })
+      .catch((error) => {
+        setIsLoading(false);
+        setHttpError(error.message);
       });
   }, []);
+
+  if (httpError) {
+    return <section className={classes["meals-error"]}>{httpError}</section>;
+  }
 
   if (isLoading) {
     return <section className={classes["meals-loading"]}>Loading...</section>;

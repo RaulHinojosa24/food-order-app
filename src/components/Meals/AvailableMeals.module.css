@@ -2,6 +2,10 @@
   color: white;
   text-align: center;
 }
+.meals-error {
+  color: red;
+  text-align: center;
+}
 
 .available-meals {
   text-align: center;
