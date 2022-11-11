@@ -14,7 +14,6 @@ const Cart = (props) => {
 
   const orderHandler = () => {
     setIsCheckout(true);
-    console.log("Order sent!");
   };
 
   const incrementHandler = (item) => {
@@ -26,6 +25,16 @@ const Cart = (props) => {
 
   const decrementHandler = (id) => {
     context.removeItem(id);
+  };
+
+  const submitOrderHandler = (userData) => {
+    fetch(
+      "https://react-http-b3296-default-rtdb.europe-west1.firebasedatabase.app/orders.json",
+      {
+        method: "POST",
+        body: JSON.stringify({ user: userData, orderedItems: context.items }),
+      }
+    );
   };
 
   const cartItems = (
@@ -63,7 +72,9 @@ const Cart = (props) => {
         <h2>Total Amount</h2>
         <span className={classes.amount}>${fixedTotalAmount}</span>
       </div>
-      {isCheckout && <Checkout onCancel={props.onClose} />}
+      {isCheckout && (
+        <Checkout onCancel={props.onClose} onConfirm={submitOrderHandler} />
+      )}
       {!isCheckout && modalActions}
     </Modal>
   );
